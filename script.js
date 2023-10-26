@@ -20,6 +20,7 @@ function cadastrar() {
     
     localStorage.setItem("tabelinha", JSON.stringify(elementos))
     atualizaTabela()
+    window.location.reload()
 }
 
 
@@ -47,6 +48,7 @@ function atualizaTabela(index) {
     </tr>
     `)
         id++;
+        
     }
 
 }
@@ -74,7 +76,7 @@ const editDelete = (event) => {
         if (action == 'edit') {
             editClient(index)
         } else {
-            const elemento = readClient()[index]
+            const elemento = lerCliente()[index]
             const response = confirm(`Deseja realmente excluir a anotação ' ${elemento.anotacao} '?`)
             if (response) {
                 lerCliente(index)
